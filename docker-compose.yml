@@ -14,6 +14,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /home/david/Documents/DATA:/opt/imagingData
       - /home/david/Documents/DATA-2:/opt/processedData
+#      - /home/david/Documents/imaging-experiment/imaging:/root/Imaging
 #      - /home/david/Documents/imaging-1:/opt/schain
     sysctls:
       - kernel.shmmax=3593184000
