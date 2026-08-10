@@ -13,7 +13,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /home/david/Documents/DATA:/opt/imagingData
       - /home/david/Documents/DATA-2:/opt/processedData
-      - /home/david/Documents/imaging:/opt/schain
+#      - /home/david/Documents/imaging-1:/opt/schain
     sysctls:
       - kernel.shmmax=3593184000
       - kernel.shmall=3593184000
