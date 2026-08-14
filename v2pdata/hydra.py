@@ -2,23 +2,29 @@
 import os, sys, json
 from schainpy.controller import Project
 
-desc = "Hydra Phase - Imaging"
 
+desc = "Hydra Phase - Imaging"
 controllerObj = Project()
 controllerObj.setup(id = '191', name='test01', description=desc)
+
 
 # DOY = 222
 startDate = '2026/08/10'
 endDate =  '2026/08/10'
 startTime =  '12:00:00'
-endTime =  '12:15:00'
+endTime =  '12:30:00'
+
 
 # dpath -> rawdata
+# JRO
+# dpath = '/home/david/Documents/DATA/Imaging/10_Aug_26/hydra/'
+# MSI
 dpath = '/home/david/Documents/DATA/Imaging/10_Aug_26/hydra/'
 
-# dpath = '/mnt/compartido4/imaging'
+
 # pptah -> processed data
-ppath = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/hydra-pdata-5'
+ppath = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/hydra-pdata-1'
+
 plots = ppath
 mpath = ppath
 delay = 30
@@ -112,10 +118,10 @@ opObj11 = procUnitConfObj1.addOperation(name='removeDC')
 opObj11.addParameter(name='mode', value='2', format='int')
 '''
 
-
+# nIncohInt 45 -> 3s
 opObj11 = procUnitConfObj1.addOperation(name='IncohInt')
 opObj11.addParameter(name='n', value='45', format='float')
-# nIncohInt 45 -> 3s
+
 
 '''op9 = procUnitConfObj1.addOperation(name='RTIPlot')
 op9.addParameter(name='id', value='20')
@@ -134,7 +140,7 @@ opObj11.addParameter(name='id', value='102', format='int')
 opObj11.addParameter(name='wintitle', value='Phase RTI', format='str')
 opObj11.addParameter(name='phase_cmap', value='jet', format='str')
 opObj11.addParameter(name='xmin', value=12.0, format='float')
-opObj11.addParameter(name='xmax', value=12.25, format='float')
+opObj11.addParameter(name='xmax', value=12.50, format='float')
 opObj11.addParameter(name='save', value=plots, format='str')
 
 

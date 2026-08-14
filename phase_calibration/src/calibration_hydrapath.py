@@ -255,11 +255,14 @@ def fit2(t, f, dx, dy, gpath, thx, thy, aguess, ct1guess, ct2guess):
 #   MAIN SCRIPT
 #----------------------------------------------
 
-main_dir = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/phase-calibration-4'
+# JRO
+# main_dir = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/phase-calibration-4'
 
+# MSI
+main_dir = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/phase-calibration-1'
 
 # Edit path to the data here!
-dir_ = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/hydra-pdata-4'
+dir_ = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/hydra-pdata-1'
 path = dir_ 
 # path = '/home/soporte01/Desktop/ian'
 
@@ -267,8 +270,8 @@ path = dir_
 # Choose the appropriate dates and times for your data
 startDate = datetime.date(2026,8,10)
 endDate = datetime.date(2026,8,10)
-startTime = datetime.time(12,4,0)
-endTime = datetime.time(12,12,0)
+startTime = datetime.time(12,0,0)
+endTime = datetime.time(12,30,0)
 
 weights_mode = None
 #weights_mode = 1
@@ -369,7 +372,7 @@ Gdiv = gain/gain_max
 Gdiv[Gdiv == 0] = epsilon
 GaindB = 10*numpy.log10(Gdiv)
 Gain_maxdB = 10*numpy.log10(gain_max)
-plt.pcolormesh(cosx,cosy,GaindB.T,shading='flat', vmin=crange[0], vmax=crange[1])
+plt.pcolormesh(cosx,cosy,GaindB.T, shading='auto', vmin=crange[0], vmax=crange[1])
 plt.axis('scaled')
 plt.grid()
 plt.xlim(srange)
