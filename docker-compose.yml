@@ -12,10 +12,10 @@ services:
       - DISPLAY=${DISPLAY}
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - /home/david/Documents/DATA:/opt/imagingData
-      - /home/david/Documents/DATA-2:/opt/processedData
-#      - /home/david/Documents/imaging-experiment/imaging:/root/Imaging
-#      - /home/david/Documents/imaging-1:/opt/schain
+      - /home/david/Documents/DATA:/opt/DATA
+      - /home/david/Documents/DATA-2:/opt/DATA-2
+      - /home/david/Documents/DATA-3:/opt/DATA-3
+#      - /home/david/Documents/imaging/Imaging:/root/Imaging
     sysctls:
       - kernel.shmmax=3593184000
       - kernel.shmall=3593184000

@@ -12,7 +12,7 @@ controllerObj.setup(id = '191', name='test01', description=desc)
 startDate = '2026/08/10'
 endDate =  '2026/08/10'
 startTime =  '12:00:00'
-endTime =  '12:30:00'
+endTime =  '12:15:00'
 
 
 # dpath -> rawdata
@@ -23,7 +23,7 @@ dpath = '/home/david/Documents/DATA/Imaging/10_Aug_26/hydra/'
 
 
 # pptah -> processed data
-ppath = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/hydra-pdata-1'
+ppath = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/hydra-pdata-5'
 
 plots = ppath
 mpath = ppath
@@ -79,8 +79,8 @@ opObj11.addParameter(name='nBaud', value='32', format='int')
 opObj11.addParameter(name='osamp', value='2', format='int')'''
 
 
-'''opObj11 = procUnitConfObj0.addOperation(name='CohInt', optype='other')
-opObj11.addParameter(name='n', value=4, format='int')'''
+opObj11 = procUnitConfObj0.addOperation(name='CohInt', optype='other')
+opObj11.addParameter(name='n', value=2, format='int')
 
 
 '''opObj11 = procUnitConfObj0.addOperation(name='ToLilBlock')
@@ -118,9 +118,13 @@ opObj11 = procUnitConfObj1.addOperation(name='removeDC')
 opObj11.addParameter(name='mode', value='2', format='int')
 '''
 
+opObj11 = procUnitConfObj1.addOperation(name='IntegrationFaradaySpectraNoLags')
+opObj11.addParameter(name='n', value='45', format='float')   # 20 for experiment
+#opObj11.addParameter(name='n', value='5', format='float')   # 5 for maintenance
+
 # nIncohInt 45 -> 3s
-opObj11 = procUnitConfObj1.addOperation(name='IncohInt')
-opObj11.addParameter(name='n', value='45', format='float')
+'''opObj11 = procUnitConfObj1.addOperation(name='IncohInt')
+opObj11.addParameter(name='n', value='45', format='float')'''
 
 
 '''op9 = procUnitConfObj1.addOperation(name='RTIPlot')

@@ -259,10 +259,10 @@ def fit2(t, f, dx, dy, gpath, thx, thy, aguess, ct1guess, ct2guess):
 # main_dir = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/phase-calibration-4'
 
 # MSI
-main_dir = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/phase-calibration-1'
+main_dir = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/phase-calibration-5'
 
 # Edit path to the data here!
-dir_ = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/hydra-pdata-1'
+dir_ = '/home/david/Documents/DATA-2/Imaging/10_Aug_26/hydra-pdata-5'
 path = dir_ 
 # path = '/home/soporte01/Desktop/ian'
 
@@ -318,6 +318,7 @@ while True:
         # Average over doppler bins and range gates
         # arr[i, j] = numpy.mean(spectradataObj.data_cspc[i,:,200:470])
         arr[i, j] = numpy.mean(spectradataObj.dataOut.data_cspc[i, :, :]) # 250:400 #100:900 # 
+        # arr[i, j] = numpy.mean(spectradataObj.dataOut.data_cspc[i, :, 50:200]) # 250:400 #100:900 # 
         #print(numpy.shape(spectradataObj.dataOut.data_cspc[i, :, :]))
 
     j += 1  # increment the counter
